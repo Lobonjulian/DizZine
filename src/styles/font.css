@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "New Rocker";
+  src:
+    url("/fonts/NewRocker.woff2") format("woff2"),
+    url("/fonts/NewRocker.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotu";
+  src:
+    url("/fonts/Gotu.woff2") format("woff2"),
+    url("/fonts/Gotu.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,22 @@
+:root {
+  /* text */
+  --font-title: "New Rocker", cursive;
+  --font-base: "Gotu", sans-serif;
+
+  /* Espaciado */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Transiciones */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.4s ease;
+  --transition-slow: 0.8s ease;
+
+  /* Z-index */
+  --z-loader: 9999;
+  --z-header: 100;
+  --z-counter: 50;
+}
