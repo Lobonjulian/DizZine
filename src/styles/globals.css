@@ -8,11 +8,12 @@
 }
 
 body {
+  font-family: var(--font-base);
   font-synthesis: none;
+  overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: var(--font-base);
 }
 
 a {
@@ -34,13 +35,6 @@ button {
 
 /* APP */
 .app-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.app-container__scroll {
   height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
