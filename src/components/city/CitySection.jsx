@@ -1,15 +1,35 @@
+import { useEffect } from "react";
+import { useVisibility } from "@/hooks/useVisibility";
+
 import "./CitySection.css";
 
-export const CitySection = ({ city }) => {
-  const { name, department, description, architecture, bgColor, population, poster, coordinates } =
-    city;
+export const CitySection = ({ city, onCityVisible }) => {
+  const {
+    id,
+    name,
+    department,
+    description,
+    architecture,
+    bgColor,
+    population,
+    poster,
+    coordinates,
+  } = city;
+
+  const [ref, isVisible] = useVisibility({ threshold: 0.5 });
+
+  useEffect(() => {
+    if (isVisible && onCityVisible) {
+      onCityVisible(id);
+    }
+  }, [isVisible, id, onCityVisible]);
 
   const formattedPopulation = population
     ? new Intl.NumberFormat("es-CO").format(population)
     : "N/A";
 
   return (
-    <section className="city-section" style={{ backgroundColor: bgColor }}>
+    <section ref={ref} className="city-section" style={{ backgroundColor: bgColor }}>
       <div className="city-frame">
         <figure className="city-section__poster">
           {poster ? (
