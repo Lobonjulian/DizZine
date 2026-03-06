@@ -3,11 +3,13 @@ import { CITIES } from "@data/cities";
 import { useEffect, useState } from "react";
 import { Header } from "./components/layout/Header/Header";
 import { Loader } from "./components/layout/Loader/Loader";
+import { Counter } from "./components/counter/Counter";
 
 function App() {
   const [activityCityId, setActivityCityId] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
+  const [viewCounts, setViewCounts] = useState({});
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,6 +33,16 @@ function App() {
     }
   }, [progress]);
 
+  useEffect(() => {
+    if (activityCityId) {
+      setViewCounts((prevCounts) => {
+        const newCounts = { ...prevCounts };
+        newCounts[activityCityId] = (newCounts[activityCityId] || 0) + 1;
+        return newCounts;
+      });
+    }
+  }, [activityCityId]);
+
   const handleCityVisible = (id) => {
     if (id !== activityCityId) {
       setActivityCityId(id);
@@ -44,6 +56,8 @@ function App() {
   return (
     <>
       <Header activeCityId={activityCityId} />
+
+      <Counter counts={viewCounts} />
 
       <main className="app-container">
         {CITIES.map((city) => (
