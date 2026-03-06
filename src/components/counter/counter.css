@@ -1,6 +1,6 @@
 .counter-widget {
   position: fixed;
-  bottom: var(--spacing-md);
+  bottom: var(--spacing-xl);
   left: var(--spacing-md);
   z-index: var(--z-counter);
   display: flex;

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { useVisibility } from "@/hooks/useVisibility";
+import { useVisibility } from "@hooks/useVisibility";
 
-import "./CitySection.css";
+import "./citySection.css";
 
 export const CitySection = ({ city, onCityVisible }) => {
   const {
@@ -46,6 +46,11 @@ export const CitySection = ({ city, onCityVisible }) => {
             <span className="poster-caption__department">{department}</span>
             <h1 className="poster-caption__name">{name}</h1>
             <p className="poster-caption__description">{description}</p>
+            <div className="poster-caption__actions">
+              <a href="#comprar" className="btn-buy">
+                Comprar aquí
+              </a>
+            </div>
           </figcaption>
         </figure>
 

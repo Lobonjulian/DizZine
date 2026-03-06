@@ -1,0 +1,35 @@
+.sidebar {
+  position: fixed;
+  top: 80%;
+  right: var(--spacing-md);
+  transform: translateY(-50%);
+  z-index: var(--z-header);
+}
+
+.sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.sidebar-item {
+  a {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+  }
+}
+
+.active {
+  display: inline-block;
+  background-color: white;
+  border-radius: var(--spacing-xs);
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}

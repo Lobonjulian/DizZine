@@ -1,53 +1,17 @@
-import { CitySection } from "@components/city/CitySection";
 import { CITIES } from "@data/cities";
-import { useEffect, useState } from "react";
-import { Header } from "./components/layout/Header/Header";
-import { Loader } from "./components/layout/Loader/Loader";
-import { Counter } from "./components/counter/Counter";
+import { CitySection } from "@components/city/CitySection";
+import { Counter } from "@components/counter/Counter";
+import { Footer } from "@components/layout/Footer/Footer";
+import { Header } from "@components/layout/Header/Header";
+import { Loader } from "@components/layout/Loader/Loader";
+import { Sidebar } from "@components/layout/Sidebar/Sidebar";
+import { useCityTracker } from "@hooks/useCityTracker";
+import { useLoader } from "@hooks/useLoader";
 
 function App() {
-  const [activityCityId, setActivityCityId] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
-  const [viewCounts, setViewCounts] = useState({});
+  const { isLoading, progress } = useLoader();
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        return prev + Math.random() * 10;
-      });
-    }, 200);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (progress >= 100) {
-      const timer = setTimeout(() => {
-        setIsLoading(false);
-      }, 500);
-      return () => clearInterval(timer);
-    }
-  }, [progress]);
-
-  useEffect(() => {
-    if (activityCityId) {
-      setViewCounts((prevCounts) => {
-        const newCounts = { ...prevCounts };
-        newCounts[activityCityId] = (newCounts[activityCityId] || 0) + 1;
-        return newCounts;
-      });
-    }
-  }, [activityCityId]);
-
-  const handleCityVisible = (id) => {
-    if (id !== activityCityId) {
-      setActivityCityId(id);
-    }
-  };
+  const { activityCityId, viewCounts, handleCityVisible } = useCityTracker();
 
   if (isLoading) {
     return <Loader progress={progress} />;
@@ -56,14 +20,16 @@ function App() {
   return (
     <>
       <Header activeCityId={activityCityId} />
-
-      <Counter counts={viewCounts} />
+      <Sidebar activeCityId={activityCityId} />
 
       <main className="app-container">
         {CITIES.map((city) => (
           <CitySection key={city.id} city={city} onCityVisible={handleCityVisible} />
         ))}
       </main>
+
+      <Counter counts={viewCounts} />
+      <Footer />
     </>
   );
 }

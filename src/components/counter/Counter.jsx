@@ -1,5 +1,6 @@
+import { CITIES } from "@data/cities";
 import { useState } from "react";
-import { CITIES } from "@/data/cities";
+
 import "./counter.css";
 
 // Counter - Muestra vistas por ciudad

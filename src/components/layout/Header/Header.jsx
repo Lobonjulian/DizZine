@@ -1,5 +1,6 @@
 import Logo from "/svg/logo.svg";
-import { CITIES } from "@/data/cities";
+import { CITIES } from "@data/cities";
+
 import "./header.css";
 
 export const Header = ({ activeCityId }) => {
