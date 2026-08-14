@@ -1,11 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DizZine - Revista de Diseño</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__logo">DizZine</div>
+      <a href="mailto:info@dizzine.com">info@dizzine.com</a>
+    </header>
+
+    <main class="home">
+      <section id="portada">
+        <figure class="home__figure">
+          <img id="cover" src="https://placehold.co/300x500" alt="Portada de la revista DizZine" />
+        </figure>
+      </section>
+
+      <section id="issue">
+        <p class="issue__description">
+          DizZine es una revista de diálogos casuales pero profundos sobre diseños y negocios.
+          Nuestra decisiones dan forma e influyen en este mundo complejo para tener la oportunidad
+          de tomar las correctas, necesitamos hablar.
+        </p>
+
+        <div class="issue__cta">
+          <p id="current-issue">Edición #5</p>
+          <a id="issue-buy" href="store.html">Comprar aquí</a>
+          <small> o en <a href="about.html" class='issue__link'>tiendas seleccionadas</a> </small>
+        </div>
+
+        <ul class="issue__editions"></ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__copyright">2023 publicado por DizZine</p>
+      <a href="privacy.html" class="footer__privacy"> Política de privacidad </a>
+    </footer>
+
+    <script type="module" src="scripts/app.js"></script>
+  </body>
 </html>
