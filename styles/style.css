@@ -16,7 +16,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #86eb86;
 }
 
 .header {
@@ -43,19 +42,35 @@ body {
   gap: var(--space-sm);
 
   #portada {
-    min-height: 60vh;
-    display: grid;
-    place-items: center;
+    height: 70vh;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
 
-    .home__figure {
-      max-width: 400px;
-      box-shadow: 0 10px 30px rgb(0 0 0 / 20%);
+    .snap-city {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      scroll-snap-align: start;
 
-      img {
+      .home__figure {
+        position: relative;
+        max-width: 450px;
+        box-shadow: 0 10px 30px rgb(0 0 0 / 20%);
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: var(--space-xs);
+        }
+      }
+
+      .home__overlay {
+        position: absolute;
+        inset: 0;
         width: 100%;
-        height: auto;
-        display: block;
-        border-radius: var(--space-xs);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
     }
   }
@@ -103,11 +118,9 @@ body {
       .active {
         font-size: 1.15rem;
         font-weight: bold;
-        
       }
     }
   }
-  
 }
 
 .footer {

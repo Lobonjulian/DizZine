@@ -7,7 +7,7 @@ export const issues = [
     architecture: ["Neoclásico", "Republicano", "Moderno"],
     population: 7878783,
     bgColor: "#d83625",
-    poster: "https://placehold.co/300x500/d83625/FFF",
+    poster: "assets/images/Bogota.avif",
     coordinates: { lat: 4.711, lng: -74.0721 },
   },
   {
@@ -18,7 +18,7 @@ export const issues = [
     architecture: ["Contemporáneo", "Urbano", "Innovador"],
     population: 2549537,
     bgColor: "#ff7f0e",
-    poster: "https://placehold.co/300x500/ff7f0e/FFF",
+    poster: "assets/images/Medellin.avif",
     coordinates: { lat: 6.2442, lng: -75.5812 },
   },
   {
@@ -29,7 +29,7 @@ export const issues = [
     architecture: ["Colonial", "Moderno", "Tropical"],
     population: 2227642,
     bgColor: "#0e4972",
-    poster: "https://placehold.co/300x500/0e4972/FFF",
+    poster: "assets/images/Cali.avif",
     coordinates: { lat: 3.4516, lng: -76.532 },
   },
   {
@@ -40,7 +40,7 @@ export const issues = [
     architecture: ["Republicano", "Art Decó", "Moderno"],
     population: 1286364,
     bgColor: "#481251",
-    poster: "https://placehold.co/300x500/481251/FFF",
+    poster: "assets/images/Barranquilla.avif",
     coordinates: { lat: 10.9685, lng: -74.7813 },
   },
   {
@@ -51,7 +51,7 @@ export const issues = [
     architecture: ["Colonial", "Republicano", "Moderno"],
     population: 1028736,
     bgColor: "#eb6150",
-    poster: "https://placehold.co/300x500/eb6150/FFF",
+    poster: "assets/images/Cartagena.avif",
     coordinates: { lat: 10.391, lng: -75.4794 },
   },
   {
@@ -62,7 +62,7 @@ export const issues = [
     architecture: ["Colonial", "Moderno"],
     population: 755098,
     bgColor: "#bcbd22",
-    poster: "https://placehold.co/300x500/bcbd22/FFF",
+    poster: "assets/images/Cucuta.avif",
     coordinates: { lat: 7.8891, lng: -72.496 },
   },
   {
@@ -73,7 +73,7 @@ export const issues = [
     architecture: ["Republicano", "Moderno", "Contemporáneo"],
     population: 632929,
     bgColor: "#0f824c",
-    poster: "https://placehold.co/300x500/0f824c/FFF",
+    poster: "assets/images/Bucaramanga.avif",
     coordinates: { lat: 7.1193, lng: -73.1227 },
   },
 ];
